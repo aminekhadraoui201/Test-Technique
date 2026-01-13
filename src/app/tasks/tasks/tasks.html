@@ -1,9 +1,9 @@
 <h2>Mes tâches</h2>
 
-<!-- Formulaire d'ajout / modification -->
+<!-- Formulaire AJOUT -->
 <app-task-form [existingTask]="editingTask" (saved)="clearEditing()"></app-task-form>
 
-<!-- Liste des tâches -->
+<!-- Liste des TACHES -->
 <div class="task-list">
   <div *ngFor="let task of tasks$ | async" [class.completed]="task.completed" class="task-item">
     <div class="task-info">

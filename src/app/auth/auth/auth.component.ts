@@ -10,6 +10,7 @@ import * as TasksActions from '../../tasks/tasks.actions';
   selector: 'app-auth',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
+    styleUrls: ['./auth.component.css'],   
   templateUrl: './auth.component.html'
 })
 export class AuthComponent {

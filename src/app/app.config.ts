@@ -13,7 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideStore(),
-    // Enregistrer les slices de state (features)
     provideState('auth', authReducer),
     provideState('tasks', tasksReducer),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
