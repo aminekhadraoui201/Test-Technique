@@ -1,0 +1,20 @@
+<div class="auth-container">
+  <p *ngIf="form.valid">auth works!</p>
+  <h2>Connexion</h2>
+
+  <form [formGroup]="form" (ngSubmit)="login()" class="auth-form">
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Email" />
+      <div class="error" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+        <span *ngIf="form.get('email')?.errors?.['required']">L'email est obligatoire.</span>
+        <span *ngIf="form.get('email')?.errors?.['email']">Format d'email invalide.</span>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Se connecter</button>
+  </form>
+  
+</div>

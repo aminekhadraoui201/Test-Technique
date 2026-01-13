@@ -1,1 +1,46 @@
-<p>task-form works!</p>
+<!-- <form [formGroup]="form" (ngSubmit)="submit()">
+  <input formControlName="title" placeholder="Titre" />
+  <textarea formControlName="description" placeholder="Description"></textarea>
+  <input type="number" formControlName="priority" min="1" max="5" />
+  <input type="date" formControlName="dueDate" />
+  <button type="submit">{{ existingTask ? 'Modifier' : 'Ajouter' }}</button>
+</form> -->
+<form [formGroup]="form" (ngSubmit)="submit()" class="task-form">
+
+  <!-- TITRE -->
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input id="title" formControlName="title" placeholder="Titre" />
+    <div class="error" *ngIf="form.get('title')?.touched && form.get('title')?.invalid">
+      Le titre est obligatoire.
+    </div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" placeholder="Description"></textarea>
+  </div>
+
+  <!-- PRIORITÉ -->
+  <div class="form-group">
+    <label for="priority">Priorité (1 à 5)</label>
+    <input id="priority" type="number" formControlName="priority" min="1" max="5" />
+    <div class="error" *ngIf="form.get('priority')?.touched && form.get('priority')?.invalid">
+      Priorité entre 1 et 5.
+    </div>
+  </div>
+
+  <!-- DATE D'ÉCHÉANCE -->
+  <div class="form-group">
+    <label for="dueDate">Date d'échéance</label>
+    <input id="dueDate" type="date" formControlName="dueDate" />
+    <div class="error" *ngIf="form.get('dueDate')?.touched && form.get('dueDate')?.invalid">
+      La date est obligatoire.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">
+    {{ existingTask ? 'Modifier' : 'Ajouter' }}
+  </button>
+</form>

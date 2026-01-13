@@ -1,0 +1,86 @@
+/* Body avec background léger */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* dégradé doux */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteneur centré */
+.auth-container {
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95); /* blanc semi-transparent */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Titre */
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+
+/* Formulaire */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Groupes de champs */
+.auth-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.auth-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.auth-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255,107,107,0.4);
+}
+
+/* Messages d'erreur */
+.auth-form .error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* Bouton */
+.auth-form button {
+  padding: 10px 15px;
+  background: #ff6b6b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.auth-form button:hover:not(:disabled) {
+  background: #fa5252;
+}

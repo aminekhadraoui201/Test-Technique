@@ -1,1 +1,20 @@
-<p>tasks works!</p>
+<h2>Mes tâches</h2>
+
+<!-- Formulaire d'ajout / modification -->
+<app-task-form [existingTask]="editingTask" (saved)="clearEditing()"></app-task-form>
+
+<!-- Liste des tâches -->
+<div class="task-list">
+  <div *ngFor="let task of tasks$ | async" [class.completed]="task.completed" class="task-item">
+    <div class="task-info">
+      <strong>{{ task.title }}</strong>
+      <p>{{ task.description }}</p>
+      <small>Priorité: {{ task.priority }} - Échéance: {{ task.dueDate }}</small>
+    </div>
+    <div class="task-actions">
+      <button (click)="toggle(task.id)" title="Marquer comme terminé">✔</button>
+      <button (click)="edit(task)" title="Modifier">✏️</button>
+      <button (click)="delete(task.id)" title="Supprimer">🗑</button>
+    </div>
+  </div>
+</div>
