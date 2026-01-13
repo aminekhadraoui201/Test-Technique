@@ -1,4 +1,5 @@
 <h2>Mes tâches</h2>
+<button class="logout-btn" (click)="logout()">🚪 Déconnexion</button>
 
 <!-- Formulaire AJOUT -->
 <app-task-form [existingTask]="editingTask" (saved)="clearEditing()"></app-task-form>
